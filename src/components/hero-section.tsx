@@ -1,41 +1,32 @@
+import Image from "next/image"
 import { Button } from "./ui/button"
 
 export default function HeroSection(){
     return  (
-    <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-12 py-8">
-            {/* Left Content */}
-            <div className="flex-1 space-y-6 text-center lg:text-left">
-              <div className="w-32 h-32 lg:w-48 lg:h-48 rounded-full mx-auto lg:mx-0 mb-8 overflow-hidden">
-                <div className="w-full h-full bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground">Profile Picture</span>
-                </div>
+    <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-12 mt-16 lg:mt-0">
+            <div className="flex-1 space-y-4 text-center ">
+              <div className="w-40 h-40   rounded-full mx-auto mb-4 overflow-hidden">
+               <Image src={'/profile.jpg'} alt="Profile pic" width={40} height={40} className="w-full h-full object-cover object-fit" />
               </div>
     
               <div className="space-y-4">
-                <p className="text-lg">Hi, I&apos;m Oghenekefe</p>
-                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+                <p className="text-lg font-bold text-slate-300">Hi, I&apos;m Oghenekefe</p>
+                <h1 className="text-4xl lg:text-7xl font-bold text-slate-500 ">
                   FRONT-END
                   <br />
                   WEB DEVELOPER
                 </h1>
-                <p className="text-lg max-w-lg mx-auto lg:mx-0">
+                <p className="text-lg text-slate-300 max-w-lg mx-auto ">
                   I&apos;m a frontend developer passionate about crafting fully
                   reponsive and interactive websites
                 </p>
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3">
+                <Button className="w-[200px] h-10 text-primary-foreground dark:bg-cyan-800 dark:text-slate-300 font-medium text-sm px-8 py-4 shadow-cyan-600/30 shadow-xl hover:shadow-cyan-600/50 hover:scale-90 transition-all cursor-pointer">
                   <a href="#contact">Reach Out</a>
                 </Button>
               </div>
             </div>
     
-            {/* Right Image */}
-            <div className="flex-1 lg:flex-none mt-8 lg:mt-0">
-              <div className="w-64 h-64 lg:w-80 lg:h-80 mx-auto overflow-hidden">
-                <div className="w-full h-full bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground">Two picture hero</span>
-                </div>
-              </div>
-            </div>
+          
     </section>
     )
 }
