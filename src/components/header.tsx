@@ -29,7 +29,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed top-0 right-0 left-0 z-50 w-full  backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
       <div className="flex justify-between items-center p-5 max-w-7xl mx-auto">
         {/* Logo/Brand - optional */}
         <div className="flex-1">
