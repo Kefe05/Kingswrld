@@ -24,9 +24,7 @@ export default function HeroSection(){
                   <a href="#contact">Reach Out</a>
                 </Button>
               </div>
-            </div>
-    
-          
+            </div>    
     </section>
     )
 }

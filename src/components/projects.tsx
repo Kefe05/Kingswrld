@@ -1,82 +1,56 @@
 import React from 'react'
-import { Button } from './ui/button'
-import { ExternalLink } from 'lucide-react';
+import ProjectCard from './project-card';
 
 export default function Projects() {
- 
-   const projects = [
-     {
-       title: "Viva Decor",
-       description:
-         "This is a website to display interior designs for viva decor it comprises of the works, services, testimonials of the viva decor clients",
-       tech: "For this project i used HTML, CSS and little Javascript for some interactivity",
-       link: "https://interior-design-henna-ten.vercel.app/",
-       image: "/interior-2.png",
-     },
-     {
-       title: "Starstation Works",
-       description:
-         "This website comprises of the works done by Starstation along with other companies, Starstation is an ad agency that is involve in marketing, advertising of global brands from food to tech to clothing",
-       tech: "For this project i used Next js, Tailwind Css, Framer Motion.",
-       link: "https://starstation.vercel.app/works",
-       image: "/star.png",
-     },
-     {
-       title: "Car Site(Ongoing)",
-       description:
-         "This is website used to display some the services offered by a car companies such as hailing services",
-       tech: "For this website I used React and Css adding some basic animation in css",
-       link: "https://react-car-site.vercel.app",
-       image: "/car-site.png",
-     },
-   ];
+
+  const projects = [
+    {
+      title: "Viva Decor",
+      description:
+        "This is a website to display interior designs for viva decor it comprises of the works, services, testimonials of the viva decor clients",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      liveUrl: "https://interior-design-henna-ten.vercel.app/",
+      image: "/profile.jpg",
+    },
+    {
+      title: "Starstation Works",
+      description:
+        "This website comprises of the works done by Starstation along with other companies, Starstation is an ad agency that is involve in marketing, advertising of global brands from food to tech to clothing",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      liveUrl: "https://starstation.vercel.app/works",
+      image: "/profile.jpg",
+    },
+    {
+      title: "Car Site",
+      description:
+        "This is website used to display some the services offered by a car companies such as hailing services",
+      technologies: ["React", "CSS", "Animations"],
+      liveUrl: "https://react-car-site.vercel.app",
+      image: "/profile.jpg",
+    },
+  ];
 
   return (
-   <section className="px-6 lg:px-12 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Projects</h2>
-          <p className="text-lg mb-12">
-            This are some of the nice collection of work that I have done.
-          </p>
-
-          <div className="space-y-16">
-            {projects.map((project, index) => (
-              <div key={index} className="space-y-6">
-                <h3 className="text-2xl font-bold">{project.title}</h3>
-
-                {/* Project Image */}
-                <div className="w-full h-64 lg:h-96 bg-muted flex items-center justify-center rounded">
-                  <span className="text-muted-foreground">
-                    Project Image: {project.image}
-                  </span>
-                </div>
-
-                {/* Project Info */}
-                <div className="space-y-4">
-                  <h4 className="text-xl font-semibold">{project.title}</h4>
-                  <p className="text-lg leading-relaxed">
-                    {project.description}
-                  </p>
-                  <p className="text-lg leading-relaxed">{project.tech}</p>
-
-                  <Button
-                    className="bg-primary text-primary-foreground hover:bg-primary/90"
-                    asChild
-                  >
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Website
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section id="works" className="px-6 lg:px-12 py-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">My Works</h2>
+         
         </div>
-      </section>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 ">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              technologies={project.technologies}
+              liveUrl={project.liveUrl}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }

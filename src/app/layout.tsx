@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`font-inter antialiased`}
+        className={`font-inter antialiased text-slate-300 `}
       >
         <ThemeProvider
           defaultTheme="system"
