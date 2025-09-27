@@ -55,24 +55,28 @@ export default function ProjectCard({
             className={`group relative overflow-hidden h-80 border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-2 ${className}`}
             {...props}
         >
-            {/* Background Video */}
+            {/* Background Video or Gradient */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
-                <Video
-                    src={video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls={false}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                    }}
-                />
+                {video ? (
+                    <Video
+                        src={video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        controls={false}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                        }}
+                    />
+                ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-blue-700 to-purple-800 group-hover:scale-105 transition-transform duration-300" />
+                )}
             </div>
 
             {/* Overlay */}
