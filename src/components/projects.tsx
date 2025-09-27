@@ -1,10 +1,10 @@
 import React from 'react'
 import ProjectCard from './project-card';
-import getStarted from '../../videos/get-started.mp4.json';
 import advertisement from '../../videos/advertisement.mp4.json';
 import analytics from '../../videos/analytics.mp4.json';
 import car from '../../videos/car-video.mp4.json';
 import peenly from '../../videos/peenly.mp4.json';
+import { Asset } from 'next-video/dist/assets.js';
 
 export default function Projects() {
 
@@ -49,7 +49,7 @@ export default function Projects() {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">My Works</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on, showcasing my skills in web development and design.
+            Here are some of the projects I&apos;ve worked on, showcasing my skills in web development and design.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function Projects() {
               key={index}
               title={project.title}
               description={project.description}
-              video={project.video}
+              video={project.video as string | Asset | undefined}
               technologies={project.technologies}
               liveUrl={project.liveUrl}
             />

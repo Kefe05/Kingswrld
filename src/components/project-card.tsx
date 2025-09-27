@@ -1,11 +1,39 @@
 import { Card } from "./ui/card"
 import { ExternalLink, GitBranch } from "lucide-react"
 import Video from "next-video"
+import { Asset } from "next-video/dist/assets.js"
+
+interface VideoSource {
+    src: string
+    width?: number
+    height?: number
+    mime?: string
+}
+
+interface VideoAsset {
+    status: string
+    originalFilePath: string
+    provider: string
+    providerMetadata: {
+        mux: {
+            uploadId: string
+            assetId: string
+            playbackId: string
+        }
+    }
+    createdAt: number
+    updatedAt: number
+    size: number
+    sources: VideoSource[]
+    poster: string
+    blurDataURL: string
+    [key: string]: unknown
+}
 
 interface ProjectCardProps {
     title: string
     description: string
-    video: string | any
+    video: string | Asset | undefined
     technologies: string[]
     githubUrl?: string
     liveUrl?: string
